@@ -34,6 +34,8 @@ function degreesConvert(degreesValue) {
     result = (degreesValue - 273.15) * 9/5 + 32;
   } else if(unitFrom.value == "kelvin" && unitTo.value == "celsius"){
     result = degreesValue - 273.15;
+  } else if(unitFrom.value.length == unitTo.value.length){
+    result = degreesValue
   }
   return result;
 }
