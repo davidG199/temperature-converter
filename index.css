@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(28, 28, 28);
+  color: white;
+}
+
+main {
+  width: 100%;
+  text-align: center;
+  padding: 30px 16px 0 16px;
+}
+
+main h2 + p {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+main form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(56, 56, 56, 0.595);
+  border-radius: 10px;
+  padding: 24px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main form div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: start;
+  width: 100%;
+  max-width: 200px;
+}
+
+main form div label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+main form div input,
+main form div select {
+  border: none;
+  border-bottom: 2px solid grey;
+  background-color: transparent;
+  padding: 8px;
+  color: white;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+main form div input:focus {
+  border-bottom: 2px solid white;
+  outline: none;
+}
+
+main form div input::placeholder {
+  color: #999;
+}
+
+main form div select {
+  padding: 8px;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+main form div select option {
+  background-color: rgb(28, 28, 28);
+  color: white;
+}
+
+main form div button {
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* main form div button:hover {
+  background-color: transparent;
+  border-color: white;
+} */
+
+main .resultCard {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 24px 0;
+  border-radius: 10px;
+  padding: 12px 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+main .resultCard span {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+main .resultCard p:nth-child(2) {
+  margin: 12px;
+}
+
+main .active {
+  display: block;
+}
+
+/* Estilo para el botón cuando está deshabilitado */
+button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+  font-weight: 600;
+}
+
+/* Estilo para el botón cuando está habilitado */
+button.active {
+  background-color: rgb(76, 175, 80);
+  border: 2px solid #4caf50;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button.active:hover {
+  background-color: transparent;
+  background-color: rgb(64, 156, 67);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 80%;
+    margin: auto;
+  }
+  main .resultCard span {
+    flex-direction: row;
+  }
+}
