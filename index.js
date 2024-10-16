@@ -23,13 +23,17 @@ unitTo.addEventListener("change", toggleButtonState);
 function degreesConvert(degreesValue) {
   let result;
   if (unitFrom.value == "fahrenheit" && unitTo.value == "celsius") {
-    result = ((degreesValue - 32) * 5) / 9;
+    result = (degreesValue - 32) * 5 / 9;
   } else if (unitFrom.value == "celsius" && unitTo.value == "fahrenheit") {
     result = (degreesValue * 9) / 5 + 32;
   } else if (unitFrom.value == "celsius" && unitTo.value == "kelvin") {
     result = degreesValue + 273.15;
   } else if (unitFrom.value == "fahrenheit" && unitTo.value == "kelvin") {
-    result = ((degreesValue + 459.67) * 5) / 9;
+    result = (degreesValue + 459.67) * 5 / 9;
+  } else if(unitFrom.value == "kelvin" && unitTo.value == "fahrenheit"){
+    result = (degreesValue - 273.15) * 9/5 + 32;
+  } else if(unitFrom.value == "kelvin" && unitTo.value == "celsius"){
+    result = degreesValue - 273.15;
   }
   return result;
 }
